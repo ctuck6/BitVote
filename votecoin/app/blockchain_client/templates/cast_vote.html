@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container text-center">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Welcome to the polls!</h1>
+    <p class="lead">Choose your candidate wisely! They may end up being your president for the next for years!</p>
+  </header>
+
+  <div class="row justify-content-center">
+    {% for candidate in candidates %}
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <div class="card-body">
+            <h4 class="card-title">{{ candidate.name }}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{ candidate.party }}</h6>
+            <p class="card-text">{{ candidate.platform }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Vote for me!</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+{% endblock body %}
